@@ -8,20 +8,25 @@ at 400m to 1600m to get stdout 3:56 min/1600.
 """
 
 # ideas as we go
+ #options
     # -a : converts the given pace (considered mile first) to mile pace at distance given
     # -t : converts a pace given, instead of printed out full list, to just the pace at wanted distance
+ #command-line
+    # need to put file in path directory and change name to 'pace' to use as pace in command line
 
-import optparse
-from sys import argv
+import argparse
+import pace_gui
 
-import main
+def main():
 
-def main(args=None):
-    if args == None:
-        args = argv[1:]
-        
     version = "0.1"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
-    parser = optparse.OptionParser(usage=(__doc__ or "").strip(), version=version)
+    parser = argparse.ArgumentParser(usage=(__doc__ or "").strip())
+
+    # add options to the CLI tool
+    parser.add_argument("--version", action="version", version=version)
+
+    # run from command line for command
+    parser.parse_args()
 
 if __name__ == "__main__":
     main()
