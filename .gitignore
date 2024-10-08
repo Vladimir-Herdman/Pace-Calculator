@@ -1,0 +1,5 @@
+# mac-specific files
+.DS_Store
+
+# tester files
+ideas.txt
