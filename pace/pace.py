@@ -10,7 +10,7 @@ distance' for, example, 59 at 400m to 1600m to get stdout 3:56 min/1600.
 import argparse
 
 import pace_math as pm
-import pace_gui as pg
+import pace_gui
 
 def main():
 
