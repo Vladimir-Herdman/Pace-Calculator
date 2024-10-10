@@ -1,5 +1,10 @@
+# byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
 # mac-specific files
 .DS_Store
 
 # tester files
-ideas.txt
+test/
