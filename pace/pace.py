@@ -30,7 +30,7 @@ class CleanerHelpFormat(argparse.HelpFormatter):
 
 def main():
 
-    version = "0.2"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
+    version = "0.3.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
     parser = argparse.ArgumentParser(
         description=(__doc__ or "").strip(), prog='pace', 
         formatter_class=CleanerHelpFormat
@@ -46,28 +46,27 @@ def main():
         # positional
     parser.add_argument(
         "pace",
-        help="The initial pace at distance, so 0:6:12 is 6:12 min/mile",
+        help="The initial pace, so 0:6:12 is 0 hourse, 6 minutes, and 12 seconds",
         nargs="+"
+    )
+
+        # see window application of pace tool
+    parser.add_argument(
+        "-g", "--gui",
+        metavar="",
+        help="open window application for pace distance conversions outside of command line"
     )
     
         # changes value
     parser.add_argument(
         "-a", "--at",
         metavar="DISTANCE",
-        help="specify the distance pace is at"
+        help="specify the distance pace is at (i.e. 1600m)"
         )
     parser.add_argument(
         "-t", "--to",
         metavar="DISTANCE",
-        help="specify to what distance you are converting to"
-    )
-
-        # boolean
-    conversion_group = parser.add_argument_group("conversion")
-    conversion_group.add_argument(
-        "-k", "--km",
-        help="Set distances and paces to be in terms of kilometers",
-        action="store_true"
+        help="specify to what distance(s) you are converting to (i.e. 200m 400m 1mi)"
     )
 
     # get the values and what was passed in command line
@@ -81,7 +80,7 @@ def main():
         except:
             pass
     
-    pf.output(args.pace, args.km, args.at, args.to)
+    pf.output(args.pace, args.at, args.to)
 
 
 if __name__ == "__main__":

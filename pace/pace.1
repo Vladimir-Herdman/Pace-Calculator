@@ -1,4 +1,4 @@
-.TH PACE 1 "2024-10-13" "Pace 0.2.0"
+.TH PACE 1 "2024-10-13" "Pace 0.3.0"
 .SH NAME
 pace \- pace conversions
 .SH SYNOPSIS
@@ -23,17 +23,21 @@ Current distance units supported:  \fIm\fR (meters), \fImi\fR (miles), \fIkm\fR
 (kilometers)
 .SH OPTIONS
 .TP
-.BR /-h ", " \-\-help
+.BR \-h ", " \-\-help
 Displays help information on pace usage.
 .TP
-.BR /-v ", " \-\-version
+.BR \-v ", " \-\-version
 Outputs the version of pace.
 .TP
-.BR /-a ", " \-\-at " " \fIdistance
+.BR \-g ", " \-\-gui
+Open windowed CustomTkinter application to convert pace outside of command line
+in more visual way.
+.TP
+.BR \-a ", " \-\-at " " \fIdistance
 Takes singular <\fIdistance\fR><\fIunit\fR> value (i.e. 1600m) for what \fIpace\fR
 value was ran/done at.  If empty, 1600m is default \fI\-\-at\fR distance.
 .TP
-.BR /-t ", " \-\-to " " \fIdistance(s)
+.BR \-t ", " \-\-to " " \fIdistance(s)
 Takes multiple <\fIdistance\fR><\fIunit\fR> values (i.e. 200m 400m 8km 10km) and
 converts specified \fI--at\fR \fIpace\fR to listed \fI\-\-to\fR distances.
 .SH EXAMPLES
@@ -53,5 +57,9 @@ $ pace 8:41 -a 3k -t 200m 400m 800m 1mi
 Do the above example in shorthand:
 
 $ pace 8:41 3k 200m 400m 800m 1mi
+.TP
+Open gui application to avoid only command line usage:
+
+$ pace -g
 .SH AUTHOR
 Vladimir Herdman <vovaherdman@gmail.com>
