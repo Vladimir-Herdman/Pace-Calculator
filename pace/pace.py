@@ -11,6 +11,7 @@ Shorthand is 'pace 59 400 1600' for above example.
 import argparse
 
 import pace_math as pm
+import pace_formatter as pf
 import pace_gui as pg
 
 
@@ -26,22 +27,10 @@ class CleanerHelpFormat(argparse.HelpFormatter):
             raise
         except:  # fallback to default formatting if error
             return super()._format_action_invocation(action)
-        
-def pace_output_formater(pace, km_convert, at_distance=None, to_distances=None):
-    print("Default paces")
-    if not (at_distance and to_distances): # print out table of values from pace at different distances (assuming mile pace)
-        pass
-    elif (at_distance and not to_distances): # print out table of values, assuming pace at given distance
-        pass
-    elif (not at_distance and to_distances): # print out table of values at distances assuming mile pace
-        pass
-    else: # convert pace at distance to new distance pace (pace 4:19 --at 1600 --to 400)
-        pass
-    exit(0)
 
 def main():
 
-    version = "0.1"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
+    version = "0.2"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
     parser = argparse.ArgumentParser(
         description=(__doc__ or "").strip(), prog='pace', 
         formatter_class=CleanerHelpFormat
@@ -85,14 +74,14 @@ def main():
     args = parser.parse_args()
 
     # Set choices and print if shorthand used
-    try:
-        args.at = args.pace[1]
-        args.to = args.pace[2:]
-    except:
-        pass
+    if not (args.at or args.to):
+        try:
+            args.at = args.pace[1]
+            args.to = args.pace[2:]
+        except:
+            pass
     
-    if (len(args.pace) > 1):
-        pace_output_formater(args.pace, args.km, args.at, args.to)
+    pf.output(args.pace, args.km, args.at, args.to)
 
 
 if __name__ == "__main__":

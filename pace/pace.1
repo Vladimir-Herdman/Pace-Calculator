@@ -1,0 +1,57 @@
+.TH PACE 1 "2024-10-13" "Pace 0.2.0"
+.SH NAME
+pace \- pace conversions
+.SH SYNOPSIS
+.B pace
+[\fB\-h\fR] [\fB\-\-help\fR]
+[\fB\-v\fR] [\fB\-\-version\fR]
+[\fB\-a\fR \fIdistance\fR] [\fB\-\-at\fR \fIdistance\fR]
+[\fB\-t\fR \fIdistance\fR \fI...\fR] [\fB\-\-to\fR \fIdistance\fR \fI...\fR]
+[\fIpace\fR \fI...\fR]
+.SH DESCRIPTION
+.B pace
+takes a given \fIpace\fR at a \fIdistance\fR and converts it to the given 
+\fIdistance(s)\fR, then printing out a neat table showing the conversions.
+
+\fBi.e.\fR "pace 4:14 -a 1600m -t 200m 400m 800m" produces a table showing the
+paces that would be hit at each specified "-t" distance for a pace of 4 minutes and
+14 seconds at the "-a" distance of 1600m.  Shorthand for the example usage would
+be "pace 4:14 1600m 200m 400m 800m" if the options are a bit of a hassle to all
+type out.
+
+Current distance units supported:  \fIm\fR (meters), \fImi\fR (miles), \fIkm\fR
+(kilometers)
+.SH OPTIONS
+.TP
+.BR /-h ", " \-\-help
+Displays help information on pace usage.
+.TP
+.BR /-v ", " \-\-version
+Outputs the version of pace.
+.TP
+.BR /-a ", " \-\-at " " \fIdistance
+Takes singular <\fIdistance\fR><\fIunit\fR> value (i.e. 1600m) for what \fIpace\fR
+value was ran/done at.  If empty, 1600m is default \fI\-\-at\fR distance.
+.TP
+.BR /-t ", " \-\-to " " \fIdistance(s)
+Takes multiple <\fIdistance\fR><\fIunit\fR> values (i.e. 200m 400m 8km 10km) and
+converts specified \fI--at\fR \fIpace\fR to listed \fI\-\-to\fR distances.
+.SH EXAMPLES
+.TP
+Get the mile pace of a marathon time:
+
+$ pace 2:18:42 -a 26.2mi -t 1mi
+.TP
+Do the above example in shorthand:
+
+$ pace 2:18:42 26.2mi 1mi
+.TP
+Get multiple splits for a 3km race time:
+
+$ pace 8:41 -a 3k -t 200m 400m 800m 1mi
+.TP
+Do the above example in shorthand:
+
+$ pace 8:41 3k 200m 400m 800m 1mi
+.SH AUTHOR
+Vladimir Herdman <vovaherdman@gmail.com>
