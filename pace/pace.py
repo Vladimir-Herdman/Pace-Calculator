@@ -5,7 +5,7 @@ Easy pace conversion from the command line.
 When stdin is 'pace' (H:M:S or M:S or S), considered mile pace, and paces
 (400m, distance) at other distances are put to stdout.  'pace -a distance -t
 distance' for, example, 59 at 400m to 1600m to get stdout 3:56 min/1600.
-Shorthand is 'pace 59 400 1600' for above example.
+Shorthand is 'pace 59 400m 1600m' for above example.
 """
 
 import argparse
