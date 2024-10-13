@@ -47,13 +47,13 @@ def main():
     parser.add_argument(
         "pace",
         help="The initial pace, so 0:6:12 is 0 hourse, 6 minutes, and 12 seconds",
-        nargs="+"
+        nargs="*"
     )
 
         # see window application of pace tool
     parser.add_argument(
         "-g", "--gui",
-        metavar="",
+        action="store_true",
         help="open window application for pace distance conversions outside of command line"
     )
     
@@ -71,6 +71,12 @@ def main():
 
     # get the values and what was passed in command line
     args = parser.parse_args()
+
+    if (args.gui):
+        pg.window_main()
+    if (not args.pace):
+        raise ValueError("usage: pace [-h] [-v] [-g] [-a DISTANCE] [-t DISTANCE] pace [pace ...]\n"
+                         "    pace: error: expected at least one argument for pace value")
 
     # Set choices and print if shorthand used
     if not (args.at or args.to):
