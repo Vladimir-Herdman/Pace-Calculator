@@ -11,7 +11,6 @@ Shorthand is 'pace 59 400m 1600m' for above example.
 import argparse
 from subprocess import run
 
-import pace.pace_math as pm
 import pace.pace_formatter as pf
 import pace.pace_gui as pg
 
@@ -31,7 +30,7 @@ class CleanerHelpFormat(argparse.HelpFormatter):
 
 def main():
 
-    version = "0.3.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
+    version = "0.4.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
     parser = argparse.ArgumentParser(
         description=(__doc__ or "").strip(), prog='pace', 
         formatter_class=CleanerHelpFormat
@@ -43,7 +42,7 @@ def main():
         "-v", "--version",
         action="version", version=version
         )
-    
+
         # positional
     parser.add_argument(
         "pace",
@@ -57,7 +56,7 @@ def main():
         action="store_true",
         help="open window application for pace distance conversions outside of command line"
     )
-    
+
         # changes value
     parser.add_argument(
         "-a", "--at",
@@ -67,7 +66,8 @@ def main():
     parser.add_argument(
         "-t", "--to",
         metavar="DISTANCE",
-        help="specify to what distance(s) you are converting to (i.e. 200m 400m 1mi)"
+        help="specify to what distance(s) you are converting to (i.e. 200m 400m 1mi)",
+        nargs="*"
     )
 
     # get the values and what was passed in command line
@@ -79,7 +79,7 @@ def main():
     if (not args.pace):  # if no pace value given
         raise ValueError("usage: pace [-h] [-v] [-g] [-a DISTANCE] [-t DISTANCE] pace [pace ...]\n"
                          "    pace: error: expected at least one argument for pace value")
-    
+
     if (args.pace[0] == "man"):  # if request for man page (pace man)
         man_path = __file__.replace("pace.py", "pace.1", 1)
         run(["man", man_path], check=True)
@@ -92,7 +92,7 @@ def main():
             args.to = args.pace[2:]
         except:
             pass
-    
+
     pf.output(args.pace, args.at, args.to)
 
 

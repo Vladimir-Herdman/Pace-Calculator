@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paces_calc"
-version = "0.3.0"
+version = "0.4.0"
 description = "pace to distance converter"
 authors = [{name = "Vladimir Herdman", email = "vovaherdman@gmail.com"}]
 license = {text = "MIT"}
