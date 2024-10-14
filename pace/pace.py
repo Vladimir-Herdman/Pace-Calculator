@@ -9,10 +9,11 @@ Shorthand is 'pace 59 400m 1600m' for above example.
 """
 
 import argparse
+from subprocess import run
 
-import pace_math as pm
-import pace_formatter as pf
-import pace_gui as pg
+import pace.pace_math as pm
+import pace.pace_formatter as pf
+import pace.pace_gui as pg
 
 
 # formatter_class declaration for cleaner help statements (e.g. '-a, --at DISTANCE')
@@ -74,9 +75,15 @@ def main():
 
     if (args.gui):
         pg.window_main()
-    if (not args.pace):
+
+    if (not args.pace):  # if no pace value given
         raise ValueError("usage: pace [-h] [-v] [-g] [-a DISTANCE] [-t DISTANCE] pace [pace ...]\n"
                          "    pace: error: expected at least one argument for pace value")
+    
+    if (args.pace[0] == "man"):  # if request for man page (pace man)
+        man_path = __file__.replace("pace.py", "pace.1", 1)
+        run(["man", man_path], check=True)
+        exit(0)
 
     # Set choices and print if shorthand used
     if not (args.at or args.to):

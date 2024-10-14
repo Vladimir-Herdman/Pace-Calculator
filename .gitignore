@@ -1,7 +1,15 @@
-# byte-compiled
+# Python
+pace/__pycache__/
 __pycache__/
+*.pyc
+*.pyo
 *.py[cod]
 *$py.class
+
+# PyPI
+*.egg-info/
+MANIFEST.in
+build/
 
 # mac-specific files
 .DS_Store
