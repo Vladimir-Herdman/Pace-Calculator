@@ -80,6 +80,8 @@ Using options instead of shorthand allows for multiple paces to be given as the 
 
 - `pace 27:05 26:43 26:15 -a 8km -t 400m 1mi 3km 5km 10km` Will produce 3 columns for 27:05, 26:43, and 26:15, with the rows holding the conversions for each of these 8km times to the given -t distances
 
+calc is short for calculator by the way, it's slang
+
 Examples
 --------
 

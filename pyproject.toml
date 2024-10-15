@@ -7,12 +7,12 @@ name = "paces_calc"
 authors = [{name = "Vladimir Herdman", email = "vovaherdman@gmail.com"}]
 license = {text = "MIT"}
 description = "pace to different distances converter"
-readme = "README.md"
-version = "0.8.0"
+readme = "pypiREADME.md"
+version = "0.8.1"
 keywords = ["pace", "distance", "conversion", "command line"]
 classifiers = [
     "Development Status :: 4 - Beta",
-    "Operating System :: Unix",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",

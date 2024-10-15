@@ -7,8 +7,10 @@ __pycache__/
 
 # PyPI
 *.egg-info/
+pypiREADME.md
 MANIFEST.in
 build/
+dist/
 
 # mac-specific files
 .DS_Store
