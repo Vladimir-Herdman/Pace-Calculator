@@ -33,7 +33,7 @@ def convert_to_seconds(pace: str):
     if (":" in pace):
         pace = pace.split(":")
         if (len(pace) == 3):
-            pace = int(pace[0])*60*60 + int(pace[1])*60 + float(pace[0])
+            pace = int(pace[0])*60*60 + int(pace[1])*60 + float(pace[2])
         else:
             pace = int(pace[0])*60 + float(pace[1])
     else:
