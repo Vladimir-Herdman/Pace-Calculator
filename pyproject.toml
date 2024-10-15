@@ -4,18 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paces_calc"
-version = "0.4.0"
-description = "pace to distance converter"
 authors = [{name = "Vladimir Herdman", email = "vovaherdman@gmail.com"}]
 license = {text = "MIT"}
+description = "pace to different distances converter"
 readme = "README.md"
-keywords = ["pace", "distance", "conversion"]
+version = "0.8.0"
+keywords = ["pace", "distance", "conversion", "command line"]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: Unix",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 
 dependencies = [
 "customtkinter>=5.2.2"
@@ -26,7 +32,7 @@ homepage = "https://github.com/Vladimir-Herdman/Pace-Calculator.git"
 repository = "https://github.com/Vladimir-Herdman/Pace-Calculator.git"
 
 [project.scripts]
-pace = "pace.pace:main"
+pace = "paces_calc.pace:main"
 
 [tool.setuptools]
-packages = ["pace"]
+packages = ["paces_calc"]

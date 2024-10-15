@@ -1,4 +1,4 @@
-import pace.pace_math as pm
+import paces_calc.pace_math as pm
 
 
 def format_table(given_paces: list[str], at_distance: str, new_distances: list[str]):

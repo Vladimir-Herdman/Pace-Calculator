@@ -11,8 +11,8 @@ Shorthand is 'pace 59 400m 1600m' for above example.
 import argparse
 from subprocess import run
 
-import pace.pace_formatter as pf
-import pace.pace_gui as pg
+import paces_calc.pace_formatter as pf
+import paces_calc.pace_gui as pg
 
 
 # formatter_class declaration for cleaner help statements (e.g. '-a, --at DISTANCE')
@@ -30,7 +30,7 @@ class CleanerHelpFormat(argparse.HelpFormatter):
 
 def main():
 
-    version = "0.4.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
+    version = "0.8.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
     parser = argparse.ArgumentParser(
         description=(__doc__ or "").strip(), prog='pace', 
         formatter_class=CleanerHelpFormat
