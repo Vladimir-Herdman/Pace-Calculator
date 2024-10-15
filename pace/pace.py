@@ -90,8 +90,9 @@ def main():
         try:
             args.at = args.pace[1]
             args.to = args.pace[2:]
+            args.pace = [args.pace[0]]
         except:
-            pass
+            args.pace = [args.pace[0]]
 
     pf.output(args.pace, args.at, args.to)
 

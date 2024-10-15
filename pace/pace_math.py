@@ -16,6 +16,9 @@ def convert_to_meters(distance: str):
     elif (distance[-1] == "m" and distance[-2:] != "km"):
         old_distance = distance[:-1]
         old_unit = "m"
+    elif (distance[-1] == "k"):  # k instead of km
+        old_distance = distance[:-1]
+        old_unit = "km"
     else:
         old_distance = distance[:-2]  # mi or km left
         old_unit = distance[-2:]
@@ -49,8 +52,8 @@ def convert_to_time_format(pace: float):
 
     if (len(min) == 1):  min = "0" + min
     if (len(seconds) == 1):  seconds = "0" + seconds
-    if ("." in seconds and len(seconds.split(".")[0]) == 1):
-        seconds = "0" + seconds
+    if ("." in seconds):
+        if (len(seconds.split(".")[0]) == 1):  seconds = "0" + seconds
         if (seconds.split(".")[1] == "0"):  seconds = seconds.split(".")[0]
 
     if (hour == "0"):  return min + ":" + seconds
