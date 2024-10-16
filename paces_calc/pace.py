@@ -28,9 +28,10 @@ class CleanerHelpFormat(argparse.HelpFormatter):
         except:  # fallback to default formatting if error
             return super()._format_action_invocation(action)
 
+
 def main():
 
-    version = "0.8.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
+    version = "0.9.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
     parser = argparse.ArgumentParser(
         description=(__doc__ or "").strip(), prog='pace', 
         formatter_class=CleanerHelpFormat

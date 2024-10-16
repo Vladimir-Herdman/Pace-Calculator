@@ -5,8 +5,7 @@ meters_conversion = {
 }
 
 def convert_to_meters(distance: str):
-    """
-    Take a distance str value (i.e. 400m, 3mi, 4km, 200...), convert the distance
+    """Take a distance str value (i.e. 400m, 3mi, 4km, 200...), convert the distance
     to its representation in meters, return ditance value (float).
     """
     # convert old distance to meters for easier comparison and calculations
@@ -26,8 +25,7 @@ def convert_to_meters(distance: str):
     return float(old_distance) * meters_conversion[old_unit]
 
 def convert_to_seconds(pace: str):
-    """
-    Take an str pace value H:M:S (i.e. 1:12:42, 4:19, 19...) and convert it to its
+    """Take an str pace value H:M:S (i.e. 1:12:42, 4:19, 19...) and convert it to its
     representation in seconds (float).
     """
     if (":" in pace):
@@ -42,8 +40,7 @@ def convert_to_seconds(pace: str):
     return pace
 
 def convert_to_time_format(pace: float):
-    """
-    Take a pace value in terms of seconds (float) and convert to str representation
+    """Take a pace value in terms of seconds (float) and convert to str representation
     in H:M:S or M:S format (i.e. 67 -> 1:07, 3664 -> 1:01:04, 12 -> 0:12...)
     """
     hour = str(int(pace // 3600))
@@ -61,8 +58,7 @@ def convert_to_time_format(pace: float):
     return hour + ":" + min + ":" + seconds
 
 def calculate_paces(pace:str, at_distance:str, new_distances:list[str]):
-    """
-    Take a given pace at a distance and convert to the paces at each given new
+    """Take a given pace at a distance and convert to the paces at each given new
     distance.
 
     Returns:
