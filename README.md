@@ -1,4 +1,4 @@
-paces_calc
+****paces_calc
 ===============
 
 paces to distances conversion, a command line tool.
@@ -107,5 +107,9 @@ Elian Kipchoge's 2022 Berlin marathon time compared to a 2:36:42 time:
 
 The GUI interface and how it looks:
 - `pace -g`
+
+
+https://github.com/user-attachments/assets/00caa1cf-b56a-44a8-b8a6-2b8f8a4febc9
+
 
 ![](documentation/gui.jpeg)
