@@ -8,7 +8,7 @@ authors = [{name = "Vladimir Herdman", email = "vovaherdman@gmail.com"}]
 license = {text = "MIT"}
 description = "pace to different distances converter"
 readme = "pypiREADME.md"
-version = "0.9.0"
+version = "1.0.1"
 keywords = ["pace", "distance", "conversion", "command line"]
 classifiers = [
     "Development Status :: 4 - Beta",

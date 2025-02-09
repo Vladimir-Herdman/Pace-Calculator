@@ -31,7 +31,7 @@ class CleanerHelpFormat(argparse.HelpFormatter):
 
 def main():
 
-    version = "0.9.0"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
+    version = "1.0.1"  # major.minor.patch (huge change)(minor addition)(if patching bug fixes)
     parser = argparse.ArgumentParser(
         description=(__doc__ or "").strip(), prog='pace', 
         formatter_class=CleanerHelpFormat
@@ -75,7 +75,9 @@ def main():
     args = parser.parse_args()
 
     if (args.gui):
-        pg.window_main()
+        pace_window = pg.Pace_Window()
+        pace_window.mainloop()
+        exit(0)
 
     if (not args.pace):  # if no pace value given
         raise ValueError("usage: pace [-h] [-v] [-g] [-a DISTANCE] [-t DISTANCE] pace [pace ...]\n"

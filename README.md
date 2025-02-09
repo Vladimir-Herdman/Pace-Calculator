@@ -88,19 +88,24 @@ Examples
 Default usage:
 - `pace 5:22`
 
-![](documentation/default_usage.png)
+![](documentation/default_usage.jpeg)
 
 Multiple 8km race times and their avergae splits at specified distances:
 - `pace 27:05 26:30 26:05 25:45 -a 8km -t 400m 1mi 2mi 5km 10km`
 
-![](documentation/8km_race.png)
+![](documentation/8km_race.jpeg)
 
 A 5 minute 12 second 1600m workout time and the splits to hit it:
 - `pace 5:12 1600m 200m 400m 800m`
 
-![](documentation/1600m_workout.png)
+![](documentation/1600m_workout.jpeg)
 
 Elian Kipchoge's 2022 Berlin marathon time compared to a 2:36:42 time:
 -  `pace 2:01:09 2:36:42 -a 26.2mi -t 400m 5km 8km 13.1mi`
 
-![](documentation/Kipchoge_marathon.png)
+![](documentation/Kipchoge_marathon.jpeg)
+
+The GUI interface and how it looks:
+- `pace -g`
+
+![](documentation/gui.jpeg)
