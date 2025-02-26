@@ -62,6 +62,7 @@ class Pace_Window(ctk.CTk):
         self.calculate_button.grid(row=3, column=0, padx=10, pady=10, sticky="sew")
 
         self.focus_force()
+        self.bind("<Return>", lambda event: self.calculate_paces_func())
         self.bind("<q>", lambda event: self.destroy())
 
     def calculate_paces_func(self):
@@ -83,3 +84,8 @@ class Pace_Window(ctk.CTk):
         table = re.sub(r"\033\[[0-9;]*m", "", table)
 
         self.results_table.set(table)
+
+
+if __name__ == "__main__":
+    app = Pace_Window()
+    app.mainloop()
