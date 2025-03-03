@@ -15,5 +15,5 @@ dist/
 # mac-specific files
 .DS_Store
 
-# tester files
-test/
+# personal
+ideas-notes.txt
